@@ -11,9 +11,11 @@ class Somador(Thread):
         self.somatorio = 0
 
     def run(self):
+        c = 0
         for i in range(self.inicio, self.fim + 1):
+            c += 1
             self.somatorio += i
-            print("Thread-", get_ident())
+            print(f"Thread{c}:", get_ident())
 
 
 s1 = Somador(0, 10)
