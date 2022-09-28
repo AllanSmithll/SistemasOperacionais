@@ -42,7 +42,7 @@ if options.jlist == '':
     for jobnum in range(0,options.jobs):
         runtime = int(options.maxlen * random.random()) + 1
         joblist.append([jobnum, runtime])
-        print( '  Job', jobnum, ' length = ', + str(runtime) + ' ')
+        print( '  Job', jobnum, ' length = ', int(runtime))
 else:
     jobnum = 0
     for runtime in options.jlist.split(','):
