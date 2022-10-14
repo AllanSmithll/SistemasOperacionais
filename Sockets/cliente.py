@@ -18,7 +18,9 @@ while True:
     escolha = input("Mais outra mensagem (sim ou não): ").upper()
     if escolha == "SIM":
         continue
-    else:
+    elif escolha == "NÃO":
         break
+    else:
+        raise f'Erro na confirmação de parada ou continuidade.'
 
 udp.close()
