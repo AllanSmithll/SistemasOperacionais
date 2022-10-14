@@ -15,7 +15,7 @@ udp.bind((HOST, PORT))
 print('Servidor no ar...')
 
 def trata_cliente(msg, cliente):
-    print('Recebi de', cliente, 'a mensagem', msg.decode())
+    print("Mensagem", msg.decode(), 'recebida de', cliente)
     udp.sendto(('OK-' + msg.decode()).encode(), cliente)
 
 while True:

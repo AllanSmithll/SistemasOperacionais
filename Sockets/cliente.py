@@ -15,12 +15,3 @@ while True:
     msg, servidor = udp.recvfrom(1024)
     print('Servidor falou: ', msg.decode())
     msg = input('Digite outra mensagem: ')
-    escolha = input("Mais outra mensagem (sim ou não): ").upper()
-    if escolha == "SIM":
-        continue
-    elif escolha == "NÃO":
-        break
-    else:
-        raise f'Erro na confirmação de parada ou continuidade.'
-
-udp.close()
