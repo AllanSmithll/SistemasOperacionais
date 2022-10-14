@@ -14,4 +14,11 @@ while True:
     udp.sendto(msg.encode(), dest)
     msg, servidor = udp.recvfrom(1024)
     print('Servidor falou: ', msg.decode())
-    msg = input('Digite uma mensagem: ')
+    msg = input('Digite outra mensagem: ')
+    escolha = input("Mais outra mensagem (sim ou não): ").upper()
+    if escolha == "SIM":
+        continue
+    else:
+        break
+
+udp.close()
