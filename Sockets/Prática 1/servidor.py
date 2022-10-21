@@ -1,5 +1,6 @@
 # 12/10/2022
 # Servidor da conexão multithread
+# Chat multithread
 
 import socket
 from time import sleep
