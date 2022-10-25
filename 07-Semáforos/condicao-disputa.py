@@ -1,7 +1,9 @@
-# 23/10/2022
+# 25/10/2022
 
 import threading
 import time
+mutex = threading.Semaphore(1)
+
 
 # Prof. Gustavo Wagner, gugawag@gmail.com
 # IFPB - Sistemas Operacionais
@@ -15,19 +17,25 @@ numero = 0
 
 def p1():
     global numero
+    print("Allan Alves Amancio")
+    print("Gabriel Oliveira")
     while True:
+        mutex.acquire()
         numero += 1
-        time.sleep(1)  # usado apenas para forcar trocar contexto entre threads e visualizar condicao de disputa
         print('P1:', numero)
+        mutex.release()
+        time.sleep(1)
 
 
 def p2():
     global numero
     while True:
+        mutex.acquire()
         numero += 1
-        time.sleep(1)  # usado apenas para forcar trocar contexto entre threads e visualizar condicao de disputa
+        # usado apenas para forcar trocar contexto entre threads e visualizar condicao de disputa
         print('P2:', numero)
-
+        mutex.release()
+        time.sleep(1)
 
 t_p1 = threading.Thread(target=p1)
 t_p2 = threading.Thread(target=p2)
